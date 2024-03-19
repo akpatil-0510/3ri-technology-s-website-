@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title> {%block title%}{%endblock title%} 3RiTechnologies </title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+     <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+     <link rel="stylesheet" href="/static/css/owl.carousel.css">
+     <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="/static/css/templatemo-style.css">
+
+     <style>
+          .custom-card-body {
+              margin-top: 20px; /* Adjust the value as needed */
+          }
+      </style>      
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="#" class="navbar-brand">3RiTechnologies</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-nav-first">
+                         <li><a href="home.html#top" class="smoothScroll">Home</a></li>
+                         <li><a href="home.html#about" class="smoothScroll">About</a></li>
+                         <li><a href="home.html#courses" class="smoothScroll">Courses</a></li>
+                         <li><a href="contact.html" class="smoothScroll">Contact</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                         {% if request.user.is_authenticated %}
+                         <li class="nav-item">
+                           <a class="nav-link" href="/feedback">feedback</a></li>
+                         </li>
+                         <li class="nav-item">
+                           <a class="nav-link" href="/signout">SignOut</a>
+                         </li>
+                         <li class="nav-item">
+                           <a class="nav-link">Welcome {{user}} :)</a>
+                         </li>     
+                         {%else%}
+                         <li class="nav-item">
+                         <a class="nav-link" href="/signup">SignUp</a>
+                         </li>
+                         <li class="nav-item">
+                         <a class="nav-link" href="/signin">Signin</a>
+                         </li>
+                   {%endif%}
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+     {% block body %}
+
+     {% endblock body %}
+
+      <!-- FOOTER -->
+      <footer id="footer">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-4 col-sm-6">
+                       <div class="footer-info">
+                            <div class="section-title">
+                                 <h2>Headquarter</h2>
+                            </div>
+                            <address>
+                                 <p> 405, Rainbow Plaza Wakad- Nashik Phata BRTS Road above McDonalds Pimple Saudagar, Rahatani, Pune, Maharashtra 411017</p>
+                            </address>
+
+                            <ul class="social-icon">
+                                 <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                 <li><a href="#" class="fa fa-twitter"></a></li>
+                                 <li><a href="#" class="fa fa-instagram"></a></li>
+                            </ul>
+
+                            <div class="copyright-text"> 
+                                 <p>3RI Technologies Pvt. Ltd.</p>
+                                 
+                                 <p>© 2023 All Rights Reserved</p>
+                            </div>
+                       </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-6">
+                       <div class="footer-info">
+                            <div class="section-title">
+                                 <h2>Contact Info</h2>
+                            </div>
+                            <address>
+                                 <p>+91 830 810 3366, +91 962 386 8215</p>
+                                 <p><a href="mailto:youremail.co">enquiry@3riechnologies.com</a></p>
+                            </address>
+
+                            <div class="footer_menu">
+                                 <h2>Quick Links</h2>
+                                 <ul>
+                                      <li><a href="#">Career</a></li>
+                                      <li><a href="#">Investor</a></li>
+                                      <li><a href="#">Terms & Conditions</a></li>
+                                      <li><a href="#">Refund Policy</a></li>
+                                 </ul>
+                            </div>
+                       </div>
+                  </div>
+
+                  <div class="col-md-4 col-sm-12">
+                       <div class="footer-info newsletter-form">
+                            <div class="section-title">
+                                 <h2>Newsletter Signup</h2>
+                            </div>
+                            <div>
+                                 <div class="form-group">
+                                      <form action="#" method="get">
+                                           <input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required="">
+                                           <input type="submit" class="form-control" name="submit" id="form-submit" value="Send me">
+                                      </form>
+                                      <span><sup>*</sup> Please note - we do not spam your email.</span>
+                                 </div>
+                            </div>
+                       </div>
+                  </div>
+                  
+             </div>
+        </div>
+   </footer>
+
+
+   <!-- SCRIPTS -->
+   <script src="/static/js/jquery.js"></script>
+   <script src="/static/js/bootstrap.min.js"></script>
+   <script src="/static/js/owl.carousel.min.js"></script>
+   <script src="/static/js/smoothscroll.js"></script>
+   <script src="/static/js/custom.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title%}Home{%endblock title%}
+
+{% block body%}
+<!-- feedback_success.html -->
+
+<div class="container mt-5">
+    <h2>Feedbacks</h2>
+    <ul class="list-group">
+        {% for feedback in feedbacks %}
+                <div class="container">
+                    <div class="item">
+                        <div class="tst-image">
+                             <img src="/static/images/user.png" class="img-responsive" alt="">
+                        </div>
+                        <div class="tst-author">
+                             <h4>{{ feedback.name }}</h4>
+                             <span>({{ feedback.created_at }})</span>
+                        </div>
+                        <p>{{ feedback.message }}</p>
+                   </div>
+                </div>
+      
+        {% endfor %}
+    </ul>
+</div>
+
+{%endblock body%}
